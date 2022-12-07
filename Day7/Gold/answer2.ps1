@@ -84,8 +84,6 @@ $currentFreespace = $totalDisk -$totalUSed
 
 "Current freespace is $currentFreespace"
 
-$dirs.GetEnumerator() | sort-object -Property value | Where-Object (($currentFreespace + $_.value) -gt $patchSize) 
-
 $dirs.GetEnumerator() | sort-object -Property value | ForEach-Object {
     if (($currentFreespace + $_.value) -gt $patchSize){
         "delete $($_.Name) would free up $($_.value)"
