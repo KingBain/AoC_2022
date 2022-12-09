@@ -1,3 +1,4 @@
+#$inventory = Get-Content -Path "..\answer_data.txt"
 $inventory = Get-Content -Path "..\answer_data.txt"
 
 $roster = New-Object -TypeName 'System.Collections.ArrayList';

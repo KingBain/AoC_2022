@@ -47,7 +47,7 @@ $commandBuffer | ForEach-Object {
         $size = ($_ -split " " -ne '')[0]
         $filename = ($_ -split " " -ne '')[1]
 
-        $files["$path$filename"] = $size
+        $files["$path$filename"] = [int]$size
     }
 }
 
@@ -82,6 +82,9 @@ $patchSize = 30000000
 
 $currentFreespace = $totalDisk -$totalUSed
 
+$files.GetEnumerator() | sort-object -Property value
+
+
 "Current freespace is $currentFreespace"
 
 $dirs.GetEnumerator() | sort-object -Property value | ForEach-Object {
@@ -90,6 +93,8 @@ $dirs.GetEnumerator() | sort-object -Property value | ForEach-Object {
         break
     }
 }
+
+
 
 
 #$needAtleast = 
