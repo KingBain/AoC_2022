@@ -1,4 +1,4 @@
-
+#https://codereview.stackexchange.com/questions/253028/powershell-find-least-common-multiple-of-a-series-of-numbers
 Function Find-LCM {
     PARAM (
     [Parameter(ValueFromPipeline=$true)]
